@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="build/pdf.mjs" type="module"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type="file" id="file_btn">
+	<input type="button" value="Process" id="btn">
+	<p id="data">HEllo WOrld</p>
+</body>
+<script defer async>
+const content = document.getElementById("data");
+const file_inp = document.getElementById("file_btn");
+const filereader = new FileReader()
+
+onload = () =>{
+	// The workerSrc property shall be specified.
+	pdfjsLib.GlobalWorkerOptions.workerSrc = 'build/pdf.worker.mjs'; 
+}
+
+filereader.onload = () => {
+	var loadingTask = pdfjsLib.getDocument(filereader.result);
+	loadingTask.promise.then((pdf) => {
+		var pages = [];
+		for(var i = 0; i < pdf.numPages; i++){pages.push(i);}
+		return Promise.all(pages.map((pageNumber) => {
+			return pdf.getPage(pageNumber + 1).then((page) => {
+				return page.getTextContent().then((content) => {
+					return content.items.map((item) => {
+						return item.str;
+					}).join('\n');
+				});
+			});
+		})).then((pages) => {return pages.join("\r\n");});
+	})
+	.then((data) => {data});
+}
+
+document.getElementById("btn").addEventListener('click',()=>{
+	console.assert(file_inp.files[0],"ERR in finding files");
+	if(!file_inp.files[0]) return;
+	
+	filereader.readAsDataURL(file_inp.files[0]);
+})
+</script>
+</html>
