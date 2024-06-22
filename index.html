@@ -56,7 +56,8 @@
 	<button id="APPLY_BTN" class="btn btn-primary">Apply</button>
 </section>
 <!-- FORM -->
-<form id="MAIN_FORM" class="container mt-3" action="" method="post">
+<form id="MAIN_FORM" class="container mt-3" enctype="multipart/form-data" 
+action="" method="post">
 	<div class="d-grid gap-2 col_2">
 		<div class="form-floating">
 			<input type="text" class="form-control" id="name1" placeholder="First Name" name="name1" required>
@@ -76,34 +77,34 @@
 		<label for="phone">Phone [123-456-7890]</label>
 	</div>
 	<label class="mt-2" for="res">Upload Resume PDF</label>
-	<input type="file" class="form-control" id="res" name="res">
+	<input type="file" class="form-control" id="res" name="res" accept=".pdf">
 
 	<!-- ADDRESS -->
 	<p title="Address"></p>
 	<div class="d-grid gap-2 col_2">
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name1" placeholder="First Name" name="name1" required>
-			<label for="name1">Address Line 1</label>
+			<input type="text" class="form-control" id="address1" placeholder="Line 1" name="address1" required>
+			<label for="address1">Address Line 1</label>
 		</div>
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name2" placeholder="Last Name" name="name2" required>
-			<label for="name2">Line 2</label>
+			<input type="text" class="form-control" id="address2" placeholder="Line 2" name="address2">
+			<label for="address2">Line 2</label>
 		</div>
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name1" placeholder="First Name" name="name1" required>
-			<label for="name1">City</label>
+			<input type="text" class="form-control" id="city" placeholder="City" name="city" required>
+			<label for="city">City</label>
 		</div>
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name2" placeholder="Last Name" name="name2" required>
-			<label for="name2">County</label>
+			<input type="text" class="form-control" id="county" placeholder="County" name="county" required>
+			<label for="county">County</label>
 		</div>
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name1" placeholder="First Name" name="name1" required>
-			<label for="name1">State</label>
+			<input type="text" class="form-control" id="state" placeholder="State" name="state" required>
+			<label for="state">State</label>
 		</div>
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name2" placeholder="Last Name" name="name2" required>
-			<label for="name2">Zip-Code</label>
+			<input type="text" class="form-control" id="zip" placeholder="Zip-Code" name="zip" required>
+			<label for="zip">Zip-Code</label>
 		</div>
 	</div>
 
