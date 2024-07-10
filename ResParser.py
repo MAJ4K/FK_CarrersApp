@@ -1,10 +1,25 @@
-import re
-from pdfminer.high_level import extract_pages, extract_text
+from flask import Flask, request, jsonify
+import json
 
-text = extract_text("sample2.pdf")
+app = Flask(__name__)
+users = [
+	{
+		'John':'password',
+		'activities' : [],
+	},
+	{
+		'Howard':'12345',
+		'activities' : [],
+	}
+]
+activities = {}
 
-print(text)
-print("helo\n")
-# for page_layout in extract_pages("sample.pdf"):
-	# for element in page_layout:
-		# print(element)
+
+@app.route("/",methods=["POST"])
+def create_user():
+	print(request.__dict__)
+	data = request.get_data()
+	return str(data),201
+
+if __name__ == "__main__":
+	app.run(debug=True)
