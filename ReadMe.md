@@ -5,4 +5,4 @@
  <!-- - **Lambda Function:** create an OBJ from form parts -->
  - **Lambda Function:** to identify data as pdf / doc
  - **Lambda Function:** to parse resumes
- - **Lambda Function:** to send json data to _______
+ <!-- - **Lambda Function:** to send json data to OpenSearch -->

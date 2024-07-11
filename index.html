@@ -60,12 +60,12 @@
 action="https://g24re232nhnfr3xcheuj65jptq0asgkx.lambda-url.us-east-1.on.aws/" method="post">
 	<div class="d-grid gap-2 col_2">
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name1" placeholder="First Name" name="name1" required>
-			<label for="name1">First Name</label>
+			<input type="text" class="form-control" id="first" placeholder="First Name" name="first" required>
+			<label for="first">First Name</label>
 		</div>
 		<div class="form-floating">
-			<input type="text" class="form-control" id="name2" placeholder="Last Name" name="name2" required>
-			<label for="name2">Last Name</label>
+			<input type="text" class="form-control" id="last" placeholder="Last Name" name="last" required>
+			<label for="last">Last Name</label>
 		</div>
 	</div>
 	<div class="col form-floating my-2">
@@ -119,6 +119,10 @@ action="https://g24re232nhnfr3xcheuj65jptq0asgkx.lambda-url.us-east-1.on.aws/" m
 		<br><label class="mt-1" for="Q2">Question 2</label><br>
 		<input type="radio" name="Q2" id="">
 	</div>
+
+	<!-- Hidden Data -->
+	<input type="hidden" name="Hidden">
+
 	<button type="submit" class="btn btn-primary my-4">Submit</button>
 	<button id="BACK_BTN" type="button" class="btn btn-danger my-4">Back</button>
 </form>
