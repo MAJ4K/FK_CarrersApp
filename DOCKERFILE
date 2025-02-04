@@ -1,0 +1,3 @@
+FROM demisto/python3-deb
+
+CMD [ "echo", "HEllo World" ]
